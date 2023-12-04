@@ -133,10 +133,16 @@ function valPasswordOptions() {
 }
 
 // Function for getting a random element from an array
-function getRandom(arr) {}
+function getRandom(array) {
+  var element = array[Math.floor(Math.random()*array.length)]
+  return element;
+
+}
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  //uppper = getRandom(upper)
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
