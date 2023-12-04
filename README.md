@@ -19,7 +19,7 @@ N/A
 
 ## Usage
 
-To access the website follow this URL: https://cestsamual.github.io/Bootstrap-Portfolio/
+To access the website follow this URL: https://cestsamual.github.io/Random-Password-Generator/
 
 To operate the website simply click the generate button, chose your desired passowrd criteria and then the generated password will be presented within the box as picture below; 
 
