@@ -117,31 +117,58 @@ function valPasswordOptions() {
   if (userOptions.length < 8 || userOptions.length > 128) {
     alert("Invalid input! Please choose a value between 8 and 128.");
     lengthOption();
-
-    charType();
+  }
+  charType();
 
     if (
-      (userOptions.lower,
-      userOptions.upper,
-      userOptions.num,
+      (userOptions.lower &&
+      userOptions.upper &&
+      userOptions.num &&
       userOptions.special === false)
     ) {
       alert("Invalid input! Please have at least one character type selected.");
       charType();
     }
+  writePassword();
   }
-}
+
 
 // Function for getting a random element from an array
 function getRandom(array) {
-  var element = array[Math.floor(Math.random()*array.length)]
+  var element = array[Math.floor(Math.random() * array.length)];
   return element;
-
 }
 
 // Function to generate password with user input
 function generatePassword() {
-  //uppper = getRandom(upper)
+
+  var lengthPw = userOptions.length;
+  var types = [];
+  var pw = [];
+  if (userOptions.upper === true){
+    types.push(upperCasedCharacters);
+  }
+  if (userOptions.lower === true){
+    types.push(lowerCasedCharacters);
+  }
+  if (userOptions.num === true) {
+    types.push(numericCharacters);
+  }
+  if (userOptions.special === true){
+    types.push(specialCharacters);
+  }
+
+  var j = 0
+  for (let i = 0; i < lengthPw; i++) {
+    pw.push(getRandom(types[j]));
+    var j = j + 1;
+    if (j === types.length){
+      var j=0;
+    }
+  }
+  var passComma =  pw.toString();
+  var pass = passComma.replace(/,/g,'');
+  return pass;
 }
 
 // Get references to the #generate element
